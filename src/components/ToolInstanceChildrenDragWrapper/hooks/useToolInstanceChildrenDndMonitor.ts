@@ -1,6 +1,6 @@
 import { ToolInstance } from '../../../types'
 import { useDndMonitor, DragEndEvent } from '@dnd-kit/core'
-import { useTools } from '../../../context/ToolContext'
+import { useTools } from '../../../context/ToolContextProvider'
 import getToolInstanceByName from '../../../utils/getToolInstanceByName'
 
 interface Props {

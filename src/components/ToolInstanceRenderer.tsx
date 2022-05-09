@@ -1,5 +1,5 @@
 import React from 'react'
-import { useTools } from '../context/ToolContext'
+import { useTools } from '../context/ToolContextProvider'
 import { ToolInstance } from '../types/index'
 
 interface ToolInstanceRendererProps {

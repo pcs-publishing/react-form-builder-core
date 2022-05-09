@@ -6,7 +6,7 @@ export {
   EditorWrapper
 } from './components'
 
-export { FormContext, ToolContext } from './context'
+export { FormContextProvider, ToolContextProvider } from './context'
 
 export {
   useFieldErrors,
@@ -24,4 +24,4 @@ export {
   getToolInstanceSiblings
 } from './utils'
 
-export { useTools } from './context/ToolContext'
+export { useTools } from './context/ToolContextProvider'

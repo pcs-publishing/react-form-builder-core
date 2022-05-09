@@ -1,5 +1,5 @@
 import { useCallback } from 'react'
-import { useTools } from '../../../context/ToolContext'
+import { useTools } from '../../../context/ToolContextProvider'
 import getToolInstanceSiblings from '../../../utils/getToolInstanceSiblings'
 import { Active, Over, DragEndEvent } from '@dnd-kit/core'
 

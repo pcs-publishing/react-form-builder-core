@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { RegisterOptions } from 'react-hook-form'
-import FormContext from '../context/FormContext'
+import FormContext from '../context/FormContextProvider'
 
 const useRegisterField = (name: string, options?: RegisterOptions) => {
   const context = useContext(FormContext)
