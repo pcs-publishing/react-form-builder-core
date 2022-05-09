@@ -2,13 +2,11 @@ export {
   ToolInstanceChildrenDragWrapper,
   Draggable,
   Form,
-  ToolInstanceRenderer
+  ToolInstanceRenderer,
+  EditorWrapper
 } from './components'
 
-export {
-  FormContext,
-  ToolContext
-} from './context'
+export { FormContext, ToolContext } from './context'
 
 export {
   useFieldErrors,
@@ -25,3 +23,5 @@ export {
   getToolInstanceByName,
   getToolInstanceSiblings
 } from './utils'
+
+export { useTools } from './context/ToolContext'
