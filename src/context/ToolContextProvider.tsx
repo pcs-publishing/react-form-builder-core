@@ -23,10 +23,24 @@ interface ToolContextExport {
   clearSelectedToolInstance: () => void
 }
 
+interface PendingToolDialogProps {
+  pendingTool: {
+    tool: Tool<any>
+    index?: number
+    parent?: string
+  } | null
+  onClose: () => void
+  onAdd: (
+    tool: ToolInstance<any>,
+    index?: number,
+    parent?: string
+  ) => true | string
+} 
+
 interface ToolContentImport<T extends FormStructure> {
   tools: Tool<any>[]
   initialValue: T
-  pendingToolDialog: React.FC<{ pendingTool: { tool: Tool<any>, index?: number, parent?: string } | null, onAdd: (instance: ToolInstance<any>) => void, onClose: () => void }>
+  pendingToolDialog: React.FC<PendingToolDialogProps>
   children: React.ReactElement
 }
 
