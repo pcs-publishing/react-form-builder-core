@@ -1,6 +1,6 @@
 {
   "name": "@pcs/react-form-creator-core",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Core library for react-form-creator",
   "repository": "https://github.com/pcs-publishing/react-form-creator-core.git",
   "author": "Christopher Train <ctrain@pcs-publishing.com>",
