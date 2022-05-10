@@ -7,6 +7,7 @@ import ToolContextProvider, { ToolContentImport } from '../context/ToolContextPr
 import Form from '../components/Form'
 import FormContent from './components/FormContent'
 import ExampleTool from './components/ExampleTool'
+import Toolbox from './components/Toolbox';
 
 export default {
   title: 'Example Usage',
@@ -17,6 +18,7 @@ export default {
 const blockTool: Tool<{ name: string, color: string, toolInstance: ToolInstance<any> }> = {
   toolType: 'block',
   title: 'Block',
+  requireName: false,
   icon: <p>Block</p>,
   component: ExampleTool,
   options: {
@@ -34,14 +36,15 @@ const Template: Story<ToolContentImport<any>> = (args) => {
             <Form onSubmit={onSubmit}>
               <FormContent />
             </Form>
-        </FormContextProvider >
+        </FormContextProvider>
+        <Toolbox />
       </EditorWrapper>
     </ToolContextProvider>
   )
 }
 
-export const DefaultTools = Template.bind({})
-DefaultTools.args = {
+export const CrudeExample = Template.bind({})
+CrudeExample.args = {
   tools: [blockTool],
   initialValue: {
     items: [

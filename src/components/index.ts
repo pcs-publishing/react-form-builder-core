@@ -1,6 +1,6 @@
 export { default as ToolInstanceChildrenDragWrapper } from './ToolInstanceChildrenDragWrapper'
-export { default as Draggable } from './Draggable'
 export { default as Form } from './Form'
 export { default as ToolInstanceRenderer } from './ToolInstanceRenderer'
 export { default as EditorWrapper } from './EditorWrapper'
 export { default as ToolInstanceDraggableWrapper } from './ToolInstanceDraggableWrapper'
+export { default as ToolboxItemWrapper } from './ToolboxItemWrapper'

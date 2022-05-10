@@ -1,6 +1,6 @@
 export {
   ToolInstanceChildrenDragWrapper,
-  Draggable,
+  ToolboxItemWrapper,
   Form,
   ToolInstanceRenderer,
   EditorWrapper,
@@ -26,5 +26,3 @@ export {
 } from './utils'
 
 export { useTools } from './context/ToolContextProvider'
-
-export { useSortable } from '@dnd-kit/sortable'

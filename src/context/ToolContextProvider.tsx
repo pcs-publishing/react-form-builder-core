@@ -49,7 +49,6 @@ const ToolContext = createContext<ToolContextExport | null>(null)
 const ToolContextProvider = <T extends FormStructure>(
   props: ToolContentImport<T>
 ) => {
-  console.log('PROPS: ', props)
   const { children, tools, initialValue } = props
   const initialItems = initialValue.items
   const [toolInstances, setToolInstances] = useState<ToolInstance<any>[]>(

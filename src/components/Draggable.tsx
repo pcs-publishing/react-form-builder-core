@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDraggable } from '@dnd-kit/core'
+import { DragOverlay, useDraggable } from '@dnd-kit/core'
 
 interface DraggableProps {
   id: string
@@ -16,16 +16,19 @@ const Draggable = (props: DraggableProps) => {
   })
 
   return (
+    <>
+    <DragOverlay>
+        {isDragging ? <div className={`${props.className} ${props.isDraggingClassName}`}>{props.children}</div> : null}
+    </DragOverlay>
     <div
-      className={`${props.className || ''} ${
-        isDragging ? props.isDraggingClassName || '' : ''
-      }`}
+      className={props.className}
       ref={setNodeRef}
       {...listeners}
       {...attributes}
-    >
+      >
       {props.children}
     </div>
+    </>
   )
 }
 
