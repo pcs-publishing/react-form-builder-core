@@ -3,7 +3,8 @@ export {
   Draggable,
   Form,
   ToolInstanceRenderer,
-  EditorWrapper
+  EditorWrapper,
+  ToolInstanceDraggableWrapper
 } from './components'
 
 export { FormContextProvider, ToolContextProvider } from './context'
@@ -25,3 +26,5 @@ export {
 } from './utils'
 
 export { useTools } from './context/ToolContextProvider'
+
+export { useSortable } from '@dnd-kit/sortable'
