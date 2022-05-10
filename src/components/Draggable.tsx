@@ -17,9 +17,9 @@ const Draggable = (props: DraggableProps) => {
 
   return (
     <>
-    <DragOverlay>
-        {isDragging ? <div className={`${props.className} ${props.isDraggingClassName}`}>{props.children}</div> : null}
-    </DragOverlay>
+      {isDragging ? <DragOverlay>
+        <div className={`${props.className} ${props.isDraggingClassName}`}>{props.children}</div>
+      </DragOverlay> : null}
     <div
       className={props.className}
       ref={setNodeRef}

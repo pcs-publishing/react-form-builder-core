@@ -45,7 +45,7 @@ const Template: Story<ToolContentImport<any>> = (args) => {
 
 export const CrudeExample = Template.bind({})
 CrudeExample.args = {
-  tools: [blockTool],
+  tools: [blockTool, {...blockTool, toolType: 'block_other'}],
   initialValue: {
     items: [
       {
