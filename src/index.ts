@@ -7,14 +7,9 @@ export {
   ToolInstanceDraggableWrapper
 } from './components'
 
-export { FormContextProvider, ToolContextProvider } from './context'
+export { CoreContextProvider } from './context'
 
-export {
-  useFieldErrors,
-  useFormSubmit,
-  useFormValue,
-  useRegisterField
-} from './hooks'
+export { useFieldErrors, useFormValue, useRegisterField } from './hooks'
 
 export {
   formatItemsToToolInstances,

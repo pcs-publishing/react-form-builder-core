@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react'
 import EditorWrapper from '../components/EditorWrapper'
 import { Tool, ToolInstance } from '../types'
 import FormContextProvider from '../context/FormContextProvider'
-import ToolContextProvider, { ToolContentImport } from '../context/ToolContextProvider'
+import ToolContextProvider, { ToolContextProviderProps } from '../context/ToolContextProvider'
 import Form from '../components/Form'
 import FormContent from './components/FormContent'
 import ExampleTool from './components/ExampleTool'
@@ -27,8 +27,8 @@ const blockTool: Tool<{ name: string, color: string, toolInstance: ToolInstance<
 }
 
 
-const Template: Story<ToolContentImport<any>> = (args) => {
-  const { onSubmit, ...contextArgs } = args as unknown as ({ onSubmit: () => void } & ToolContentImport<any>)
+const Template: Story<ToolContextProviderProps<any>> = (args) => {
+  const { onSubmit, ...contextArgs } = args as unknown as ({ onSubmit: () => void } & ToolContextProviderProps<any>)
   return (
     <ToolContextProvider {...contextArgs}>
       <EditorWrapper>

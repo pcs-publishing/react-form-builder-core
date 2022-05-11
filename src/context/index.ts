@@ -1,2 +1,1 @@
-export { default as FormContextProvider } from './FormContextProvider'
-export { default as ToolContextProvider } from './ToolContextProvider'
+export { default as CoreContextProvider } from './CoreContextProvider'

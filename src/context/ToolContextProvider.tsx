@@ -37,7 +37,7 @@ interface PendingToolDialogProps {
   ) => true | string
 } 
 
-export interface ToolContentImport<T extends FormStructure> {
+export interface ToolContextProviderProps<T extends FormStructure> {
   tools: Tool<any>[]
   initialValue: T
   pendingToolDialog?: React.FC<PendingToolDialogProps>
@@ -47,7 +47,7 @@ export interface ToolContentImport<T extends FormStructure> {
 const ToolContext = createContext<ToolContextExport | null>(null)
 
 const ToolContextProvider = <T extends FormStructure>(
-  props: ToolContentImport<T>
+  props: ToolContextProviderProps<T>
 ) => {
   const { children, tools, initialValue } = props
   const initialItems = initialValue.items
