@@ -41,7 +41,7 @@ export interface ToolContextProviderProps<T extends FormStructure> {
   tools: Tool<any>[]
   initialValue: T
   pendingToolDialog?: React.FC<PendingToolDialogProps>
-  children: React.ReactElement
+  children: React.ReactNode | React.ReactNode[]
 }
 
 const ToolContext = createContext<ToolContextExport | null>(null)
