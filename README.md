@@ -1,6 +1,6 @@
 # React Form Creator Core
 
-The core logic for creating FormEditor and FormRenderer UI components.
+The core logic for creating FormEditor and FormRenderer UI components. This library contains no styling or pre-build tools, just the core logic for allowing the placement of tools on a form via drag and drop.
 
 ## Installation
 
@@ -22,7 +22,7 @@ yarn add @pcs/react-form-creator-core
 
 Forms are made up of instances of tools and your FormEditor/FormRenderer components need to know how to render them.
 
-Here is an example of basic text field tool:
+Here is an example of a basic text field tool:
 
 ```typescript
 import { Tool } from '@pcs/react-form-creator-core'
@@ -32,7 +32,7 @@ const TextFieldTool: Tool<TextFieldProps> = {
   toolType: 'text_field', // a unique tool type value
   title: 'Text Field', // The human readable name of the tool
   icon: <i>TEXT</i>, // A React element that renders an icon for the tool
-  options: { // The options object represents the default options for the tool, on tool render each option is passed at a prop to the tool component
+  options: { // The options object represents the default options for the tool, on tool render each option is passed as a prop to the tool component
     label: 'Default Label' 
   },
   component: TextField // The component to render for an instance of this tool
@@ -192,3 +192,45 @@ export default Toolbox
 ```
 
 Wrapping your tool item's in `ToolboxItemWrapper` will make each tool item draggable, then once dropped on to your form it will start the creation of a tool instance in the position it was dropped. If the tool requires a name then the previously mentioned configured `PendingToolDialog` will come into play, once the user has confirmed a valid name for the tool then the tool instance will be created and added to the form.
+
+### Setting up a Renderer
+
+A Form Renderer component is the component that is used after the form has been created and is ready for data to be entered into it, setting one up can be done like so:
+
+```typescript
+import { CoreContextProvider, Form, ToolInstanceRenderer, FormStructure, Tool, useTools } from '@pcs/react-form-creator-core'
+
+interface FormRendererProps {
+  tools: Tool<any>[]
+  items: FormStructure['items']
+  onSubmit: (data: Record<string, unknown>) => void
+}
+
+const FormRendererWrapped = (props: FormRendererProps) => {
+  const { tools, items, className, onSubmit } = props
+  return (
+    <CoreContextProvider tools={tools} initialValue={{ items }}>
+      <FormRenderer
+        onSubmit={onSubmit}
+      />
+    </ContextProvider>
+  )
+}
+
+const FormRenderer = (props: Pick<FormRendererProps, 'onSubmit'>) => {
+  return (
+    <Form onSubmit={props.onSubmit}>
+      {toolInstances.map((toolInstance) => (
+        <ToolInstanceRenderer
+          key={toolInstance.name}
+          toolInstance={toolInstance}
+        />
+      ))}
+      <input type="submit">Submit</button>
+    </Form>
+  )
+}
+
+export default FormRendererWrapped
+
+```
