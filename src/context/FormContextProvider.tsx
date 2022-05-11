@@ -19,7 +19,7 @@ interface FormContextExport {
 
 export const FormContext = createContext<FormContextExport | null>(null)
 
-const FormContextProvider = (props: { children: React.ReactChild }) => {
+const FormContextProvider = (props: { children: React.ReactNode }) => {
   const { register, handleSubmit, watch, formState, control } = useForm()
 
   return (
