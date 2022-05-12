@@ -9,7 +9,12 @@ export {
 
 export { CoreContextProvider } from './context'
 
-export { useFieldErrors, useFormValue, useRegisterField } from './hooks'
+export {
+  useFieldErrors,
+  useFormValue,
+  useRegisterField,
+  useFormControl
+} from './hooks'
 
 export {
   formatItemsToToolInstances,
