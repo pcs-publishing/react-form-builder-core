@@ -22,4 +22,4 @@ export {
 
 export { useTools } from './context/ToolContextProvider'
 
-export { Tool, ToolInstance, FormStructure } from './types'
+export { Tool, ToolInstance, FormStructure, FieldProps } from './types'
